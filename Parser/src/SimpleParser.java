@@ -13,7 +13,7 @@ import org.eclipse.jdt.core.dom.SimpleName;
 public class SimpleParser {
  
 	//use ASTParse to parse string
-	public static void parse(File f, String str) {
+	public static void parse(final File f, String str) {
 		
 		ASTParser parser = ASTParser.newParser(AST.JLS3);
 		parser.setSource(str.toCharArray());
@@ -74,7 +74,7 @@ public class SimpleParser {
 	//loop directory to get file list to parse
 	public static void ParseFilesInDir() throws IOException{
 		File dirs = new File(".");
-		String dirPath = dirs.getCanonicalPath() + File.separator+"src"+File.separator;
+		String dirPath = dirs.getCanonicalPath() + File.separator+"source"+File.separator;
 		File root = new File(dirPath);
 		File[] files = root.listFiles ( );
 		String filePath = null;
